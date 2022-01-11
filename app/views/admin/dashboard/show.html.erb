@@ -1,8 +1,14 @@
-<h1>Admin::Dashboard#show</h1>
-
-<p>Number of products:
+<h1>
+<span class="label label-primary">Total number of Products:
 <%= @products.count() %>
-</p>
-<p>Number of catagories:
+</span>
+</h1>
+
+<h1>
+<span class="label label-primary">Total number of Catagories:
 <%= @categories.count() %>
-</p>
+</span>
+</h1>
+<div>
+    <%= link_to 'All Products', [:admin, :products], class: 'btn btn-info' %>
+</div>
