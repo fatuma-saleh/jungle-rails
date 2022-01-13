@@ -1,12 +1,47 @@
-<h1>Signup!</h1>
-
-<%= form_for :user, url: '/users' do |f| %>
-
-  FirstName: <%= f.text_field :first_name %>
-  LastName: <%= f.text_field :last_name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
-
-<% end %>
+<div class="container">
+  <left><h2 class="text-primary">Please Sign Up</h2></left>
+  <%= form_for :user, url: '/users' do |f| %>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+        FirstName <%= f.text_field :first_name,:class => 'form-control' %><br /> 
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+        LastName <%= f.text_field :last_name,:class => 'form-control' %><br/>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+        Email <%= f.text_field :email,:class => 'form-control' %><br/>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+        Password: <%= f.password_field :password, :class => 'form-control' %><br/>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+    <div class="row">
+      <div class="col-md-4 offset-4">
+      Password Confirmation: <%= f.password_field :password_confirmation, :class => 'form-control' %><br/>
+      </div>
+    </div>
+  </div>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+          <%= f.submit "Submit", :class => 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
