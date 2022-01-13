@@ -1,0 +1,26 @@
+<div class="container">
+  <h2 class="text-primary">Login to Jungle!</h2>
+  <%= form_tag '/login' do %>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+        Email <%= text_field_tag :email,"",:class => 'form-control'  %><br/>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+        Password <%= password_field_tag :password,"",:class => 'form-control'%><br/>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+        <%= submit_tag "Submit", :class => 'btn btn-primary'%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,23 +1,24 @@
+
 <tr>
 
 <td>
-<%= product.name%>
+<%= item.product.name%>
 </td>
 
 <td>
-<%= image_tag product.image.tiny %>
+<%= image_tag item.product.image.tiny %>
 </td>
 
 <td>
-<%= product.description %>
+<%= item.product.description %>
 </td>
 
 <td>
-<%= product.quantity %>
+<%= item.quantity %>
 </td>
 
 <td>
-<%= humanized_money_with_symbol product.price %>
+<%= humanized_money_with_symbol item.total_price %>
 </td>
 
 </tr>
