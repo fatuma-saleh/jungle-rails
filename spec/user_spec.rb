@@ -97,9 +97,43 @@ RSpec.describe User, type: :model do
       p newUser2
       expect(newUser2).to_not be_valid
       end   
-
+    end
     describe '.authenticate_with_credentials' do
-        
+      it "authenticate a user with credentials" do
+        newUser = User.create(
+          first_name: 'Fatuma',
+          last_name:  'Saleh',
+          email: 'test@test.com',
+          password:'1234567',
+          password_confirmation:'1234567'
+          )
+        user =  User.authenticate_with_credentials('test@test.com','1234567')
+        expect(user).to_not be_nil
       end   
+       
+
+      it "authenticate a user with spaces in email" do
+        newUser = User.create(
+          first_name: 'Fatuma',
+          last_name:  'Saleh',
+          email: 'test@test.com',
+          password:'1234567',
+          password_confirmation:'1234567'
+          )
+        user =  User.authenticate_with_credentials('  test@test.com  ','1234567')
+        expect(user).to_not be_nil
+      end   
+      it "authenticate a user with diffrerent case in email" do
+        newUser = User.create(
+          first_name: 'Fatuma',
+          last_name:  'Saleh',
+          email: 'test@test.com',
+          password:'1234567',
+          password_confirmation:'1234567'
+          )
+        user =  User.authenticate_with_credentials('Test@tEst.com','1234567')
+        expect(user).to_not be_nil
+      end   
+   end   
  end
-end 
+
