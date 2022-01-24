@@ -76,7 +76,7 @@ expect(shirt).to_not be_valid
       quantity: 17,
       price: 100
     )
-    puts shirt.errors.full_messages
+     puts shirt.errors.full_messages
  expect(shirt.errors.full_messages).to eq(["Category can't be blank"]) 
  end
 end
